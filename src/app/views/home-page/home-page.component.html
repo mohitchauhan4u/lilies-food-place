@@ -1,1 +1,25 @@
-<p>home-page works!</p>
+<div class="w-full h-full bg-[#00302E] pt-12 px-12">
+  <div class="header flex flex-row justify-between items-center">
+    <div class="flex flex-row items-center space-x-3">
+      <img src="assets\images\lilies-logo.svg" alt="logo" />
+      <span class="font-bold text-4xl text-white leading-10">Lilies</span>
+    </div>
+    <div class="flex flex-row items-center space-x-6">
+      <span
+        class="font-medium text-xl leading-8 text-[#FBDDBB] text-opacity-80 cursor-pointer"
+        >Home</span
+      >
+      <span
+        (click)="navigateToLoginPage()"
+        class="font-medium text-xl leading-8 text-white text-opacity-80 cursor-pointer"
+        >Login</span
+      >
+      <button
+        (click)="navigateToSignupPage()"
+        class="bg-[#E2B887] rounded-md py-1.5 px-6 border-1 border-black border-solid shadow-2xl font-semibold text-base leading-8 text-[#00302E] cursor-pointer"
+      >
+        Sign Up
+      </button>
+    </div>
+  </div>
+</div>
