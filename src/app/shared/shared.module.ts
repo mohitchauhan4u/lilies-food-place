@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { HomePageMealCardComponent } from './home-page-meal-card/home-page-meal-card.component';
 
 @NgModule({
   imports: [],
-  declarations: [HomePageMealCardComponent],
-  exports: [HomePageMealCardComponent],
+  declarations: [],
+  exports: [],
 })
 export class SharedModule {}

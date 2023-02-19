@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { SignupPageComponent } from './views/signup-page/signup-page.component';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { HomePageComponent } from './views/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { HomePageComponent } from './views/home-page/home-page.component';
     SignupPageComponent,
     LoginPageComponent,
     DashboardComponent,
-    HomePageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
