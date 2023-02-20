@@ -8,3 +8,31 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+form {
+  margin-top: 35px;
+  width: 100%;
+
+  .input-box-container {
+    margin-bottom: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid rgba(251, 221, 187, 0.51);
+    background: rgba(255, 255, 255, 0.83);
+    border-radius: 5px;
+    padding: 19px 0px 19px 25px;
+    span {
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+  }
+  .input-box {
+    border: none;
+    caret-color: #00302e;
+    color: #00302e;
+    outline: none;
+    width: 100%;
+  }
+}
