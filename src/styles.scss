@@ -21,18 +21,18 @@ form {
     border: 1px solid rgba(251, 221, 187, 0.51);
     background: rgba(255, 255, 255, 0.83);
     border-radius: 5px;
-    padding: 19px 0px 19px 25px;
+    .input-box {
+      padding: 19px 0px 19px 25px;
+      border: none;
+      caret-color: #00302e;
+      color: #00302e;
+      outline: none;
+      width: 100%;
+    }
     span {
       cursor: pointer;
       margin-right: 10px;
       font-size: 14px;
     }
-  }
-  .input-box {
-    border: none;
-    caret-color: #00302e;
-    color: #00302e;
-    outline: none;
-    width: 100%;
   }
 }

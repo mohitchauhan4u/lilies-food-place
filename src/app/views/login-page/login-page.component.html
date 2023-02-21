@@ -16,11 +16,10 @@
       </div>
       <div class="input-box-container">
         <input
-          type="password"
+          type="{{ showPassword ? 'text' : 'password' }}"
           placeholder="Your Password"
           class="input-box"
           id="password-input"
-          [(ngModel)]="password"
         />
         <span
           type="button"
@@ -28,6 +27,13 @@
           (click)="togglePasswordVisibility()"
           >{{ showPassword ? "Hide" : "Show" }}</span
         >
+      </div>
+      <app-button
+        [buttonText]="buttonText"
+        (buttonClicked)="submitDetails()"
+      ></app-button>
+      <div class="create-account-class" (click)="navigateToSignupPage()">
+        Create an account
       </div>
     </form>
   </div>

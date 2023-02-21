@@ -1,0 +1,45 @@
+.login-page-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  .login-page-image {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .login-details-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 0 40px;
+    .header {
+      font-weight: 600;
+      font-size: 27px;
+      line-height: 33px;
+      color: #00302e;
+      text-align: center;
+    }
+
+    .already-have-account-class {
+      margin-top: 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 33px;
+      text-align: center;
+      color: rgba(0, 48, 46, 0.91);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .login-page-image {
+    display: none;
+  }
+  .login-details-container {
+    width: 100% !important;
+  }
+}

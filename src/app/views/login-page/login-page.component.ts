@@ -1,24 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
 })
-export class LoginPageComponent {
-  password: string = '';
+export class LoginPageComponent implements OnInit {
   showPassword: boolean = false;
+  buttonText = 'LOGIN';
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {}
 
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
+  }
 
-    const passwordInput = document.getElementById(
-      'password-input'
-    ) as HTMLInputElement;
-    if (this.showPassword) {
-      passwordInput.type = 'text';
-    } else {
-      passwordInput.type = 'password';
-    }
+  navigateToSignupPage() {
+    this.router.navigate(['/signup']);
+  }
+
+  submitDetails() {
+    //call API for login and redirect to dashboard on success
+    this.router.navigate(['/dashboard']);
   }
 }
