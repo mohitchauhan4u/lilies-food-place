@@ -3,8 +3,28 @@
   .content {
     margin-left: 250px;
     padding: 60px 30px 30px 30px;
-    transition: all 0.3s ease;
-    position: relative;
     overflow-y: auto;
+    width: 100%;
+    .header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .welcome-text {
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 33px;
+        text-align: center;
+        color: #00302e;
+      }
+      .question-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 33px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.69);
+      }
+    }
   }
 }
