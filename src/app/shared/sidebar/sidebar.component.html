@@ -7,14 +7,14 @@
         <span>Dashboard</span>
       </span>
     </li>
-    <li>
+    <li (click)="showOrders()">
       <span>
         <img src="assets/images/order-icon.svg" alt="order-icon" />
         <span>Orders</span></span
       >
       <span class="order-count-container">{{ ordersCount }}</span>
     </li>
-    <li>
+    <li (click)="showCart()">
       <span>
         <img src="assets/images/cart-icon.svg" alt="cart-icon" />
         <span>Your Cart</span></span

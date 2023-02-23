@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dish-card',
@@ -7,6 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DishCardComponent implements OnInit {
   @Input() dish: any;
+  @Output() addToCartClicked = new EventEmitter();
 
   ngOnInit(): void {}
+
+  addToCart() {
+    this.addToCartClicked.emit();
+  }
 }

@@ -1,5 +1,8 @@
 <div class="dashboard-container">
-  <app-sidebar></app-sidebar>
+  <app-sidebar
+    (cartButtonClicked)="openCartDialog()"
+    (ordersButtonClicked)="openOrderDialog()"
+  ></app-sidebar>
 
   <div class="content">
     <div class="header">
@@ -12,6 +15,7 @@
       <app-dish-card
         [dish]="dish"
         *ngFor="let dish of dishData"
+        (addToCartClicked)="openAddToCartDialog(dish)"
       ></app-dish-card>
     </div>
   </div>
