@@ -9,7 +9,10 @@
       >
     </div>
     <div class="card-container">
-      <app-dish-card></app-dish-card>
+      <app-dish-card
+        [dish]="dish"
+        *ngFor="let dish of dishData"
+      ></app-dish-card>
     </div>
   </div>
 </div>
