@@ -1,7 +1,12 @@
 <div class="card">
   <img class="dish-img" src="{{ dish.imgPath }}" alt="dish-image" />
   <span class="dish-name">{{ dish.name }}</span>
-  <span class="dish-description">{{ dish.description }}</span>
+  <span
+    class="dish-description"
+    matTooltip="{{ dish.description }}"
+    matTooltipPosition="above"
+    >{{ dish.description }}</span
+  >
   <div class="card-footer">
     <span class="dish-price">₹ {{ dish.price }}</span>
     <span class="add-to-cart">Add to cart</span>

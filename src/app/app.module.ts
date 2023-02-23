@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { SignupPageComponent } from './views/signup-page/signup-page.component';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
     FormsModule,
     HttpClientModule,
     SharedModule,
+    BrowserAnimationsModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
