@@ -1,0 +1,95 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #fbfbfb;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #fff;
+  padding-top: 50px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  .logo {
+    width: 207px;
+    height: 58px;
+  }
+  ul {
+    list-style: none;
+    margin-top: 60px;
+    width: 250px;
+
+    li {
+      width: 198px;
+      margin: 10px 15px;
+      padding: 2px 10px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      line-height: 24px;
+      color: #707070;
+      cursor: pointer;
+      span {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        img {
+          height: 24px;
+          width: 24px;
+        }
+        span {
+          margin-left: 10px;
+          margin-top: 3px;
+        }
+      }
+      .order-count-container {
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        width: 20px;
+        height: 20px;
+        background: #06e775;
+        border: 1px solid #06e775;
+        border-radius: 5px;
+      }
+      .cart-count-container {
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        width: 20px;
+        height: 20px;
+        background: #f3c294;
+        border: 1px solid #f3c294;
+        border-radius: 5px;
+      }
+      &:hover {
+        background: #efefef;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+      }
+    }
+    .selected-tab {
+      background: #efefef;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+    }
+  }
+}

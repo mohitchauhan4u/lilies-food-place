@@ -1,0 +1,25 @@
+<div class="sidebar">
+  <img class="logo" src="assets/images/lilies-logo.svg" alt="lilies-logo" />
+  <ul>
+    <li [ngClass]="{ 'selected-tab': dashboardSelected }">
+      <span>
+        <img src="assets/images/home-icon.svg" alt="home-icon" />
+        <span>Dashboard</span>
+      </span>
+    </li>
+    <li>
+      <span>
+        <img src="assets/images/order-icon.svg" alt="order-icon" />
+        <span>Orders</span></span
+      >
+      <span class="order-count-container">{{ ordersCount }}</span>
+    </li>
+    <li>
+      <span>
+        <img src="assets/images/cart-icon.svg" alt="cart-icon" />
+        <span>Your Cart</span></span
+      >
+      <span class="cart-count-container">{{ cartCount }}</span>
+    </li>
+  </ul>
+</div>
