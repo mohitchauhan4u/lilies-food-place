@@ -11,6 +11,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-bottom: 25px;
       .welcome-text {
         font-weight: 600;
         font-size: 23px;
@@ -24,6 +25,17 @@
         line-height: 33px;
         text-align: center;
         color: rgba(0, 0, 0, 0.69);
+      }
+    }
+    .card-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 1280px) {
+      .card-container {
+        justify-content: start;
       }
     }
   }
