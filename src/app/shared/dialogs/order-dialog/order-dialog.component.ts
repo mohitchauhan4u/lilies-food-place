@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { LocalService } from 'src/app/services/local.service';
 
 @Component({
   selector: 'app-order-dialog',
   templateUrl: './order-dialog.component.html',
-  styleUrls: ['./order-dialog.component.scss']
+  styleUrls: ['./order-dialog.component.scss'],
 })
-export class OrderDialogComponent {
+export class OrderDialogComponent implements OnInit {
+  orders: any;
 
+  constructor(
+    private dialogRef: MatDialogRef<OrderDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) data: any
+  ) {
+    this.orders = data;
+  }
+
+  ngOnInit() {}
+
+  closeDialog() {
+    this.dialogRef.close({ checkout: false });
+  }
 }

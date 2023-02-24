@@ -37,10 +37,8 @@ export class CartDialogComponent implements OnInit {
   }
 
   removeItemFromCart(index: number) {
-    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    this.cart = cart;
+    this.cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(this.cart));
     this.localService.emitCartCountChange();
     this.getTotalPrice();
   }

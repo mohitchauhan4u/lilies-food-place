@@ -1,0 +1,97 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  .empty-orders-text {
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302e;
+  }
+  .empty-orders-image {
+    width: 85%;
+    height: fit-content;
+  }
+}
+.orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  .empty-orders-text {
+    text-align: center;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302e;
+  }
+  .header {
+    width: 85%;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 33px;
+    color: #00302e;
+  }
+  table {
+    width: 85%;
+    .thead-row {
+      th {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 33px;
+        color: rgba(0, 0, 0, 0.69);
+        text-align: start !important;
+      }
+      .text-center {
+        text-align: center !important;
+      }
+    }
+    .dish-detail-row {
+      .name-img-container {
+        display: flex;
+        img {
+          height: 70px;
+          width: 70px;
+          border-radius: 50%;
+        }
+        .dish-name-and-remove {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 10px;
+          .dish-name {
+            font-weight: 600;
+            font-size: 17px;
+            color: #00302e;
+          }
+        }
+      }
+    }
+    tr {
+      border-spacing: 10px !important;
+    }
+    .bold-text {
+      text-align: center;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 33px;
+      color: #00302e;
+    }
+    .cooking-status {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 33px;
+      color: #ff3a44;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .name-img-container {
+    flex-direction: column;
+    .dish-name-and-remove {
+      margin-left: 0px;
+    }
+  }
+}

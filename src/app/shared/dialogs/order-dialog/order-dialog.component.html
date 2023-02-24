@@ -1,1 +1,36 @@
-<p>order-dialog works!</p>
+<div class="orders" *ngIf="orders.length == 0">
+  <div class="close-btn">
+    <span (click)="closeDialog()"> &times; </span>
+  </div>
+  <div class="empty-orders-text">Your don't have any orders</div>
+  <img
+    src="assets/images/empty-cart-image.svg"
+    alt="empty-orders-image"
+    class="empty-orders-image"
+  />
+</div>
+<div *ngIf="orders.length >= 1" class="orders">
+  <div class="close-btn">
+    <span (click)="closeDialog()"> &times; </span>
+  </div>
+  <div class="header">Your orders</div>
+  <table>
+    <tr class="thead-row">
+      <th>Item</th>
+      <th class="text-center">Qty</th>
+      <th class="text-center">Total Price</th>
+      <th class="text-center">Status</th>
+    </tr>
+    <tr class="dish-detail-row" *ngFor="let item of orders; let i = index">
+      <td class="name-img-container">
+        <img src="{{ item.dish.imgPath }}" alt="{{ item.dish.name }}" />
+        <div class="dish-name-and-remove">
+          <span class="dish-name">{{ item.dish.name }}</span>
+        </div>
+      </td>
+      <td class="bold-text">{{ item.quantity }}</td>
+      <td class="bold-text">₹ {{ item.quantity * item.dish.price }}</td>
+      <td class="cooking-status">Cooking</td>
+    </tr>
+  </table>
+</div>
