@@ -21,12 +21,12 @@ export class LocalService {
   }
 
   getOrderCount() {
-    const orders = JSON.parse(localStorage.getItem('orders') || '');
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
     return orders.length;
   }
 
   getCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart') || '');
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     return cart.length;
   }
 }

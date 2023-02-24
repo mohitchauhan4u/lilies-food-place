@@ -28,7 +28,7 @@ export class AddToCartDialogComponent implements OnInit {
   }
 
   updateCart() {
-    const cart = JSON.parse(localStorage.getItem('cart') || '');
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     let index = -1;
     for (let i = 0; i < cart.length; i++) {
       if (cart[i].dish.name == this.dish.name) {

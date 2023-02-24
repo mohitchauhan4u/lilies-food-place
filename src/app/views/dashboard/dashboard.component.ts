@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddToCartDialogComponent } from 'src/app/shared/dialogs/add-to-cart-dialog/add-to-cart-dialog.component';
 import { CartDialogComponent } from 'src/app/shared/dialogs/cart-dialog/cart-dialog.component';
 import { OrderDialogComponent } from 'src/app/shared/dialogs/order-dialog/order-dialog.component';
+import { PaymentDialogComponent } from 'src/app/shared/dialogs/payment-dialog/payment-dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -40,8 +41,24 @@ export class DashboardComponent implements OnInit {
   }
 
   openCartDialog() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const dialogRef = this.dialog.open(CartDialogComponent, {
+      data: cart,
       panelClass: 'custom-cart-container',
+      position: {
+        right: '0',
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result && result.checkout) {
+        this.openPaymentDialog();
+      }
+    });
+  }
+
+  openOrderDialog() {
+    const dialogRef = this.dialog.open(OrderDialogComponent, {
+      panelClass: 'custom-order-container',
       position: {
         right: '0',
       },
@@ -49,9 +66,9 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {});
   }
 
-  openOrderDialog() {
-    const dialogRef = this.dialog.open(OrderDialogComponent, {
-      panelClass: 'custom-order-container',
+  openPaymentDialog() {
+    const dialogRef = this.dialog.open(PaymentDialogComponent, {
+      panelClass: 'custom-payment-container',
       position: {
         right: '0',
       },
