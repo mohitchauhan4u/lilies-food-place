@@ -65,11 +65,10 @@ body {
 }
 
 form {
-  margin-top: 35px;
+  margin-top: 10px;
   width: 100%;
-
   .input-box-container {
-    margin-bottom: 25px;
+    margin-top: 25px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -90,6 +89,17 @@ form {
       margin-right: 10px;
       font-size: 14px;
     }
+  }
+  .error-text {
+    color: rgba(255, 0, 0, 0.5);
+    font-size: 12px;
+    margin: 2px 0 0;
+  }
+  .input-box-error {
+    border: 1px solid red;
+  }
+  .submit-btn {
+    margin-top: 25px;
   }
 }
 

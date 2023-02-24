@@ -1,3 +1,9 @@
-<button type="button" class="btn-class" (click)="emitButtonClicked()">
+<button
+  [disabled]="disabled"
+  type="submit"
+  class="btn-class submit-btn"
+  (click)="emitButtonClicked()"
+  [ngClass]="disabled ? 'cursor-not-allowed' : 'cursor-pointer'"
+>
   {{ buttonText }}
 </button>

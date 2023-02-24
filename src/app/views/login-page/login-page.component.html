@@ -6,20 +6,57 @@
   />
   <div class="login-details-container">
     <div class="header">Welcome Back!</div>
-    <form action="">
-      <div class="input-box-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div
+        [ngClass]="{
+          'input-box-error':
+            loginForm.get('email')?.invalid &&
+            (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)
+        }"
+        class="input-box-container"
+      >
         <input
           type="email"
           placeholder="Your Email address"
           class="input-box"
+          formControlName="email"
         />
       </div>
-      <div class="input-box-container">
+      <div
+        *ngIf="
+          loginForm.get('email')?.invalid &&
+          (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)
+        "
+      >
+        <div
+          class="error-text"
+          *ngIf="loginForm.get('email')?.errors?.['required']"
+        >
+          *Email is required.
+        </div>
+        <div
+          class="error-text"
+          *ngIf="loginForm.get('email')?.errors?.['email']"
+        >
+          *Invalid email format.
+        </div>
+      </div>
+
+      <div
+        class="input-box-container"
+        [ngClass]="{
+          'input-box-error':
+            loginForm.get('password')?.invalid &&
+            (loginForm.get('password')?.dirty ||
+              loginForm.get('password')?.touched)
+        }"
+      >
         <input
           type="{{ showPassword ? 'text' : 'password' }}"
           placeholder="Your Password"
           class="input-box"
           id="password-input"
+          formControlName="password"
         />
         <span
           type="button"
@@ -28,12 +65,33 @@
           >{{ showPassword ? "Hide" : "Show" }}</span
         >
       </div>
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          (loginForm.get('password')?.dirty ||
+            loginForm.get('password')?.touched)
+        "
+      >
+        <div
+          class="error-text"
+          *ngIf="loginForm.get('password')?.errors?.['required']"
+        >
+          *Password is required.
+        </div>
+        <div
+          class="error-text"
+          *ngIf="loginForm.get('password')?.errors?.['minlength']"
+        >
+          *Password must be at least 6 characters.
+        </div>
+      </div>
       <app-button
+        [disabled]="loginForm.invalid"
         [buttonText]="buttonText"
         (buttonClicked)="submitDetails()"
       ></app-button>
-      <div class="create-account-class" (click)="navigateToSignupPage()">
-        Create an account
+      <div class="create-account-class">
+        <span (click)="navigateToSignupPage()">Create an account</span>
       </div>
     </form>
   </div>

@@ -6,23 +6,92 @@
   />
   <div class="login-details-container">
     <div class="header">Welcome to Lilies!</div>
-    <form action="">
-      <div class="input-box-container">
-        <input type="text" placeholder="Your First Name" class="input-box" />
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div
+        [ngClass]="{
+          'input-box-error':
+            signupForm.get('firstName')?.invalid &&
+            (signupForm.get('firstName')?.dirty ||
+              signupForm.get('firstName')?.touched)
+        }"
+        class="input-box-container"
+      >
+        <input
+          type="text"
+          placeholder="Your First Name"
+          class="input-box"
+          formControlName="firstName"
+        />
       </div>
-      <div class="input-box-container">
+      <div
+        *ngIf="
+          signupForm.get('firstName')?.invalid &&
+          (signupForm.get('firstName')?.dirty ||
+            signupForm.get('firstName')?.touched)
+        "
+      >
+        <div
+          class="error-text"
+          *ngIf="signupForm.get('firstName')?.errors?.['required']"
+        >
+          *First name is required.
+        </div>
+        <div
+          class="error-text"
+          *ngIf="signupForm.get('firstName')?.errors?.['minlength']"
+        >
+          *First name must be at least 2 characters.
+        </div>
+      </div>
+      <div
+        [ngClass]="{
+          'input-box-error':
+            signupForm.get('email')?.invalid &&
+            (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)
+        }"
+        class="input-box-container"
+      >
         <input
           type="email"
           placeholder="Your Email address"
           class="input-box"
+          formControlName="email"
         />
       </div>
-      <div class="input-box-container">
+      <div
+        *ngIf="
+          signupForm.get('email')?.invalid &&
+          (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)
+        "
+      >
+        <div
+          class="error-text"
+          *ngIf="signupForm.get('email')?.errors?.['required']"
+        >
+          *Email is required.
+        </div>
+        <div
+          class="error-text"
+          *ngIf="signupForm.get('email')?.errors?.['email']"
+        >
+          *Invalid email format.
+        </div>
+      </div>
+      <div
+        [ngClass]="{
+          'input-box-error':
+            signupForm.get('password')?.invalid &&
+            (signupForm.get('password')?.dirty ||
+              signupForm.get('password')?.touched)
+        }"
+        class="input-box-container"
+      >
         <input
           type="{{ showPassword ? 'text' : 'password' }}"
           placeholder="Your Password"
           class="input-box"
           id="password-input"
+          formControlName="password"
         />
         <span
           type="button"
@@ -31,7 +100,28 @@
           >{{ showPassword ? "Hide" : "Show" }}</span
         >
       </div>
+      <div
+        *ngIf="
+          signupForm.get('password')?.invalid &&
+          (signupForm.get('password')?.dirty ||
+            signupForm.get('password')?.touched)
+        "
+      >
+        <div
+          class="error-text"
+          *ngIf="signupForm.get('password')?.errors?.['required']"
+        >
+          *Password is required.
+        </div>
+        <div
+          class="error-text"
+          *ngIf="signupForm.get('password')?.errors?.['minlength']"
+        >
+          *Password must be at least 6 characters.
+        </div>
+      </div>
       <app-button
+        [disabled]="signupForm.invalid"
         [buttonText]="buttonText"
         (buttonClicked)="submitDetails()"
       ></app-button>

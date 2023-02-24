@@ -32,7 +32,9 @@
       line-height: 33px;
       text-align: center;
       color: rgba(0, 48, 46, 0.91);
-      cursor: pointer;
+      span {
+        cursor: pointer;
+      }
     }
   }
 }
