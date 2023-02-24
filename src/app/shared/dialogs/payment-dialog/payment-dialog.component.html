@@ -1,1 +1,25 @@
-<p>payment-dialog works!</p>
+<div class="dialog">
+  <div class="close-btn">
+    <span (click)="closeDialog()"> &times; </span>
+  </div>
+  <div class="header">Checkout</div>
+  <form action="">
+    <div class="input-box-container">
+      <input type="text" placeholder="Card Number" class="input-box" />
+    </div>
+    <div class="input-box-container" id="date-conatiner">
+      <input type="date" placeholder="Exp Date" class="input-box" />
+    </div>
+    <div class="input-box-container">
+      <input type="password" placeholder="CVV/CVV2" class="input-box" />
+    </div>
+    <div class="input-box-container">
+      <input type="password" placeholder="Card Pin" class="input-box" />
+    </div>
+    <app-button
+      [buttonText]="buttonText"
+      (buttonClicked)="pay()"
+      class="payment-btn"
+    ></app-button>
+  </form>
+</div>

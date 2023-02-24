@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { LocalService } from 'src/app/services/local.service';
 
 @Component({
   selector: 'app-order-dialog',
@@ -20,6 +19,6 @@ export class OrderDialogComponent implements OnInit {
   ngOnInit() {}
 
   closeDialog() {
-    this.dialogRef.close({ checkout: false });
+    this.dialogRef.close();
   }
 }
