@@ -25,7 +25,6 @@ export class DashboardComponent implements OnInit {
   getDishData() {
     this.productService.getDishData().subscribe((data) => {
       this.dishData = data.dishData;
-      console.log(this.dishData);
     });
   }
 
@@ -37,11 +36,7 @@ export class DashboardComponent implements OnInit {
         right: '0',
       },
     });
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result && result.cartUpdated) {
-        console.log('Dialog was closed with result:', result);
-      }
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   openCartDialog() {
@@ -61,8 +56,6 @@ export class DashboardComponent implements OnInit {
         right: '0',
       },
     });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('Dialog was closed with result:', result);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }

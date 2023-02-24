@@ -19,14 +19,12 @@ export class AddToCartDialogComponent implements OnInit {
     this.dish = data;
   }
 
-  ngOnInit() {
-    console.log(this.dish);
-  }
+  ngOnInit() {}
 
   addToCart() {
     this.updateCart();
     this.localService.emitCartCountChange();
-    this.dialogRef.close({ cartUpdated: true });
+    this.dialogRef.close();
   }
 
   updateCart() {
