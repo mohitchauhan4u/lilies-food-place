@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'lilies-food-place';
-  cart: any[] = [];
-  orders: any[] = [];
+
   ngOnInit(): void {
-    // localStorage.setItem('cart', JSON.stringify(this.cart));
-    // localStorage.setItem('orders', JSON.stringify(this.orders));
-    localStorage.setItem('cart', JSON.stringify([]));
-    localStorage.setItem('orders', JSON.stringify([]));
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+    if (!cart) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+    if (!orders) {
+      localStorage.setItem('orders', JSON.stringify([]));
+    }
   }
 }
