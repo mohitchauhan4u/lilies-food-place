@@ -9,6 +9,8 @@ import { LocalService } from 'src/app/services/local.service';
 })
 export class CartDialogComponent implements OnInit {
   cart: any;
+  totalPrice: number = 0;
+  buttonText: string = 'Checkout';
 
   constructor(
     private dialogRef: MatDialogRef<CartDialogComponent>,
@@ -18,14 +20,29 @@ export class CartDialogComponent implements OnInit {
     this.cart = data;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getTotalPrice();
+  }
+
+  getTotalPrice() {
+    let cost = 0;
+    this.cart.forEach((item: any) => {
+      cost += item.quantity * item.dish.price;
+    });
+    this.totalPrice = cost;
+  }
 
   checkout() {
     this.dialogRef.close({ checkout: true });
   }
 
-  removeItemFromCart() {
+  removeItemFromCart(index: number) {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    this.cart = cart;
     this.localService.emitCartCountChange();
+    this.getTotalPrice();
   }
 
   closeDialog() {

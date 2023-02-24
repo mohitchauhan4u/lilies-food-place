@@ -1,5 +1,48 @@
-<div class="cart">
+<div class="cart" *ngIf="cart.length == 0">
   <div class="close-btn">
     <span (click)="closeDialog()"> &times; </span>
   </div>
+  <div class="empty-cart-text">Your cart is empty</div>
+  <img
+    src="assets/images/empty-cart-image.svg"
+    alt="empty-cart-image"
+    class="empty-cart-image"
+  />
+</div>
+<div *ngIf="cart.length >= 1" class="cart">
+  <div class="close-btn">
+    <span (click)="closeDialog()"> &times; </span>
+  </div>
+  <div class="header">Your Cart</div>
+  <table>
+    <tr class="thead-row">
+      <th>Item</th>
+      <th class="text-center">Qty</th>
+      <th class="text-center">Unit Price</th>
+      <th class="text-center">Sub-total</th>
+    </tr>
+    <tr class="dish-detail-row" *ngFor="let item of cart; let i = index">
+      <td class="name-img-container">
+        <img src="{{ item.dish.imgPath }}" alt="{{ item.dish.name }}" />
+        <div class="dish-name-and-remove">
+          <span class="dish-name">{{ item.dish.name }}</span>
+          <span class="remove-button" (click)="removeItemFromCart(i)"
+            >Remove</span
+          >
+        </div>
+      </td>
+      <td class="bold-text">{{ item.quantity }}</td>
+      <td class="bold-text">₹ {{ item.dish.price }}</td>
+      <td class="bold-text">₹ {{ item.quantity * item.dish.price }}</td>
+    </tr>
+  </table>
+  <div class="total-price">
+    Total:
+    <span>₹ {{ totalPrice }}</span>
+  </div>
+  <app-button
+    [buttonText]="buttonText"
+    (buttonClicked)="checkout()"
+    class="checkout-btn"
+  ></app-button>
 </div>
