@@ -9,6 +9,8 @@ import { LocalService } from 'src/app/services/local.service';
 export class SidebarComponent implements OnInit {
   ordersCount: number = 0;
   cartCount: number = 0;
+  isSidebarOpen = false;
+
   dashboardSelected: boolean = true;
   @Output() ordersButtonClicked = new EventEmitter();
   @Output() cartButtonClicked = new EventEmitter();
@@ -32,5 +34,9 @@ export class SidebarComponent implements OnInit {
 
   showCart() {
     this.cartButtonClicked.emit();
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }

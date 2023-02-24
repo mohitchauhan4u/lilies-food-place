@@ -14,6 +14,7 @@
   align-items: center;
   overflow-y: auto;
   overflow-x: hidden;
+  z-index: 100;
   .logo {
     width: 207px;
     height: 58px;
@@ -91,4 +92,75 @@
       color: #000000;
     }
   }
+}
+
+.toggle-button {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+}
+
+@media screen and (min-width: 600px) {
+  .sidebar {
+    left: 0;
+    width: 250px;
+  }
+
+  .toggle-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+}
+
+.toggle-button span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #333;
+  border-radius: 3px;
+  z-index: 102;
+}
+
+.toggle-button span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.toggle-button span:last-child {
+  transform-origin: 0% 100%;
+}
+
+.toggle-button.show span:first-child {
+  transform: rotate(45deg);
+}
+
+.toggle-button.show span:last-child {
+  transform: rotate(-45deg);
+}
+
+.toggle-button.show span:nth-child(2) {
+  opacity: 0;
+}
+.bg-gray {
+  background: #fbfbfb;
+}
+.bg-white {
+  background: white;
 }

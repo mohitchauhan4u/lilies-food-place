@@ -1,4 +1,13 @@
-<div class="sidebar">
+<button
+  class="toggle-button"
+  [ngClass]="isSidebarOpen ? 'bg-gray' : 'bg-white'"
+  (click)="toggleSidebar()"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<div class="sidebar" [ngClass]="{ show: isSidebarOpen }">
   <img class="logo" src="assets/images/lilies-logo.svg" alt="lilies-logo" />
   <ul>
     <li [ngClass]="{ 'selected-tab': dashboardSelected }">
