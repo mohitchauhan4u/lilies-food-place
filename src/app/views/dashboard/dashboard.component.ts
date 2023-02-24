@@ -56,9 +56,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  openOrderDialog() {
-    const dialogRef = this.dialog.open(OrderDialogComponent, {
-      panelClass: 'custom-order-container',
+  openPaymentDialog() {
+    const dialogRef = this.dialog.open(PaymentDialogComponent, {
+      panelClass: 'custom-payment-container',
       position: {
         right: '0',
       },
@@ -66,9 +66,11 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {});
   }
 
-  openPaymentDialog() {
-    const dialogRef = this.dialog.open(PaymentDialogComponent, {
-      panelClass: 'custom-payment-container',
+  openOrderDialog() {
+    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+    const dialogRef = this.dialog.open(OrderDialogComponent, {
+      data: orders,
+      panelClass: 'custom-order-container',
       position: {
         right: '0',
       },
