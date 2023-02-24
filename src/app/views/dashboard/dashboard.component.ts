@@ -37,7 +37,13 @@ export class DashboardComponent implements OnInit {
         right: '0',
       },
     });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result && result.cartUpdated) {
+        console.log('Dialog was closed with result:', result);
+      }
+    });
   }
+
   openCartDialog() {
     const dialogRef = this.dialog.open(CartDialogComponent, {
       panelClass: 'custom-cart-container',
@@ -45,13 +51,18 @@ export class DashboardComponent implements OnInit {
         right: '0',
       },
     });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
+
   openOrderDialog() {
     const dialogRef = this.dialog.open(OrderDialogComponent, {
       panelClass: 'custom-order-container',
       position: {
         right: '0',
       },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('Dialog was closed with result:', result);
     });
   }
 }

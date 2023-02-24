@@ -2,38 +2,38 @@
   "dishData": [
     {
       "imgPath": "https://www.dominos.co.in/files/items/Margherita.jpg",
-      "name": "Pizza",
-      "description": "A delicious pizza with tomato sauce, cheese, and your choice of toppings.",
+      "name": "Margherita Pizza",
+      "description": "A delicious pizza with tomato sauce, mozzarella cheese, and fresh basil leaves. Available in medium and large sizes. Choose from a range of toppings to create your perfect pizza.",
       "price": 499
     },
     {
       "imgPath": "https://assets.cntraveller.in/photos/6246f468c579dd6f2d1244b6/3:2/w_2385,h_1590,c_limit/Best%20Burgers%20in%20Mumbai%20_Louis%20Monstercheese%20Burger.jpg",
-      "name": "Burger",
-      "description": "A juicy burger with a beef patty, lettuce, tomato, onion, and your choice of toppings.",
+      "name": "Beef Burger",
+      "description": "A juicy burger with a grilled beef patty, lettuce, tomato, onion, ketchup, and mustard. Served with a side of fries.",
       "price": 299
     },
     {
       "imgPath": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/02/05/Baked-Feta-Pasta-4_s4x3.jpg.rend.hgtvcom.616.493.suffix/1615916524567.jpeg",
-      "name": "Pasta",
-      "description": "A classic Italian dish with your choice of pasta, tomato sauce, and meat or vegetables.",
+      "name": "Spaghetti ",
+      "description": "A classic Italian dish with spaghetti pasta, tomato sauce, and homemade meatballs. Topped with Parmesan cheese and fresh parsley.",
       "price": 149
     },
     {
       "imgPath": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2FsYWR8ZW58MHx8MHx8&w=1000&q=80",
-      "name": "Salad",
-      "description": "A fresh salad with mixed greens, cherry tomatoes, cucumber, and your choice of dressing.",
+      "name": "Mixed Salad",
+      "description": "A fresh salad with mixed greens, cherry tomatoes, cucumber, red onion, avocado, and your choice of dressing. Add grilled chicken or shrimp for extra protein.",
       "price": 69
     },
     {
       "imgPath": "https://pinchandswirl.com/wp-content/uploads/2022/11/Lamb-Tacos__sq.jpg",
-      "name": "Tacos",
-      "description": "Three soft corn tortillas filled with your choice of meat, onions, cilantro, and salsa.",
+      "name": "Beef Tacos",
+      "description": "Three soft corn tortillas filled with seasoned ground beef, diced onion, cilantro, and homemade salsa. Served with a side of rice and beans.",
       "price": 199
     },
     {
       "imgPath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU70WjjeKovVxGnKVvnPDqDLpRDlfLO7Zmrw&usqp=CAU",
-      "name": "Sushi",
-      "description": "Assorted sushi rolls with fresh fish, avocado, and vegetables.",
+      "name": "Sushi Rolls",
+      "description": "A selection of sushi rolls with fresh fish, avocado, cucumber, and pickled ginger. Includes California rolls, spicy tuna rolls, and rainbow rolls.",
       "price": 399
     }
   ]

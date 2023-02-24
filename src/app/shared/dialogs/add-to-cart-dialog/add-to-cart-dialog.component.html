@@ -1,1 +1,29 @@
-<p>add-to-cart-dialog works!</p>
+<div class="card">
+  <div class="close-btn">
+    <span (click)="closeDialog()"> &times; </span>
+  </div>
+  <img class="dish-img" src="{{ dish.imgPath }}" alt="dish-image" />
+  <span class="dish-name">{{ dish.name }}</span>
+  <span class="dish-description">{{ dish.description }}</span>
+  <div class="dish-details">
+    <span class="price">₹ {{ dish.price }}</span>
+    <span class="cooking-time">10-20 mins</span>
+  </div>
+  <div class="card-footer">
+    <div class="add-remove-buttons">
+      <button
+        [ngClass]="dishCount > 1 ? 'cursor-pointer' : 'cursor-none'"
+        (click)="
+          dishCount > 1 ? (dishCount = dishCount - 1) : (dishCount = dishCount)
+        "
+      >
+        -
+      </button>
+      <span>{{ dishCount }}</span>
+      <button class="cursor-pointer" (click)="dishCount = dishCount + 1">
+        +
+      </button>
+    </div>
+    <button class="custom-button" (click)="addToCart()">ADD TO CART</button>
+  </div>
+</div>
