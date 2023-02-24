@@ -37,7 +37,6 @@ export class DashboardComponent implements OnInit {
         right: '0',
       },
     });
-    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   openCartDialog() {
@@ -63,7 +62,6 @@ export class DashboardComponent implements OnInit {
         right: '0',
       },
     });
-    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   openOrderDialog() {
@@ -75,6 +73,5 @@ export class DashboardComponent implements OnInit {
         right: '0',
       },
     });
-    dialogRef.afterClosed().subscribe((result) => {});
   }
 }
