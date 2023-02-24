@@ -16,7 +16,8 @@ export class PaymentDialogComponent implements OnInit {
 
   ngOnInit() {}
 
-  pay() {
+  pay(event: Event) {
+    event.preventDefault();
     const cart = JSON.parse(localStorage.getItem('cart') || '[]');
     const orders = JSON.parse(localStorage.getItem('orders') || '[]');
     cart.forEach((element: any) => {

@@ -3,7 +3,7 @@
     <span (click)="closeDialog()"> &times; </span>
   </div>
   <div class="header">Checkout</div>
-  <form>
+  <form (submit)="pay($event)">
     <div class="input-box-container">
       <input type="text" placeholder="Card Number" class="input-box" />
     </div>
@@ -16,10 +16,6 @@
     <div class="input-box-container">
       <input type="password" placeholder="Card Pin" class="input-box" />
     </div>
-    <app-button
-      [buttonText]="buttonText"
-      (buttonClicked)="pay()"
-      class="payment-btn"
-    ></app-button>
+    <app-button [buttonText]="buttonText" class="payment-btn"></app-button>
   </form>
 </div>
